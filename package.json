@@ -5,9 +5,14 @@
   "scripts": {
     "start": "nx run-many --parallel --target=serve --projects=api,spa-jacuzzi",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "prepare": "husky install"
   },
-  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
     "@nestjs/common": "^9.0.0",
@@ -23,6 +28,10 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.1",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@commitlint/config-nx-scopes": "^17.4.0",
+    "@commitlint/cz-commitlint": "^17.4.1",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@nrwl/cypress": "15.4.5",
@@ -49,6 +58,7 @@
     "@vitest/coverage-c8": "~0.25.8",
     "@vitest/ui": "^0.25.8",
     "babel-plugin-styled-components": "1.10.7",
+    "commitizen": "^4.2.6",
     "cypress": "^11.0.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -57,9 +67,11 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^8.0.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jsdom": "~20.0.3",
+    "lint-staged": "^13.1.0",
     "nx": "15.4.5",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
